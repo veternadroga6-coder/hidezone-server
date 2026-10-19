@@ -1,7 +1,9 @@
-const express = require('http');
+const express = require('express');
 const { Server } = require('socket.io');
-const http = express();
-const server = http.createServer();
+const http = require('http');
+
+const app = express();
+const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 
 const rooms = {};
